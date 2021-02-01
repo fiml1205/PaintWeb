@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <link rel="stylesheet" href="/css/paint.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Paint Is Life</h1>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="dropdown">
+                <a href="http://localhost:3000" class="dropbtn fas fa-user"></a>
+        </div>
+    </div>
+    
+    <div id="tools">
+        <button onclick="undo()" class="fas fa-undo"></button>
+        <button onclick="redo()" class="fas fa-redo"></button>
+        <button onclick="setTool('pen')" class="fas fa-pencil-alt"></button>
+        <button onclick="setTool('line')" class="fas fa-ruler"></button>
+        <button onclick="setTool('rect')" class="fas fa-square"></button>
+        <button onclick="setTool('circle')" class="fas fa-circle"></button>
+        <button onclick="changeColor('white')" style="background: white;" class="fas fa-eraser"></button>
+        <div class="color-group">      
+            <button onclick="changeColor('#ff0000')" style="background: red;"></button>
+            <button onclick="changeColor('#000000')" style="background: black;"></button>
+            <button onclick="changeColor('#00ff00')" style="background: green;"></button>
+            <button onclick="changeColor('yellow')" style="background: yellow;"></button>
+            <button onclick="changeColor('blue')" style="background: blue;"></button>
+            <button onclick="changeColor('purple')" style="background: purple;"></button>
+            <button onclick="changeColor('orange')" style="background: orange;"></button>
+            <button onclick="changeColor('pink')" style="background: pink;"></button>
+            <button onclick="changeColor('brown')" style="background: brown;"></button>
+            <button onclick="changeColor('gray')" style="background: gray;"></button>
+        </div>
+        <button onclick="changeLineWidth (2)">1</button>
+        <button onclick="changeLineWidth (4)">2</button>
+        <button onclick="changeLineWidth (6)">3</button>
+        <button onclick="changeLineWidth (7)">4</button>
+        <button onclick="changeLineWidth (8)">5</button>
+        <button onclick="changeLineWidth (9)">6</button>
+        <button onclick="changeLineWidth (10)">7</button>
+        <button onclick="changeLineWidth (11)">8</button>
+        <button onclick="changeLineWidth (12)">9</button>
+    </div>
+    
+    <form action="" method="POST"><canvas id="board"></canvas></form>
+    
+    <div class="more">
+        <button type="button" onclick="save()" class="fas fa-save" class="save"></button>
+        <button onclick="reload()" class="fas fa-trash-alt" class="reload"></button>
+    </div>
+    
+    <script src="/js/paint.js"></script>
+    <script>function changeColor(color) {
+                p.color = color 
+            }
+            function changeLineWidth(lineWidth) {
+                p.lineWidth = lineWidth
+            }
+            function setTool(tool) {
+                p.tool = tool
+            }
+            function undo () {
+                p.undo()
+            }
+            function redo () {
+                p.redo()
+            }
+            function reload () {
+                p.drawBackgound()
+            }
+            function save () {
+                p.save()
+            }
+    </script>        
+    
+</body>
+</html>
+

@@ -1,0 +1,100 @@
+body {
+    background-image: url(https://thuthuatnhanh.com/wp-content/uploads/2019/12/hinh-nen-may-tinh.jpg);            
+}
+
+#tools {
+    padding: 10px;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;    
+}
+#tools button {
+    padding: 6px 10px;
+}
+#board {   
+    display: block ;
+    background: white;
+    margin: 10px auto
+}
+
+.more {
+    width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.more button {
+    padding: 7px 10px;
+    margin-top: 7px;
+}
+
+.color-group {
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+}
+
+.color-group button {
+    width: 35px;
+} 
+
+.d-flex {
+    margin: auto;
+    margin-left: 25%;
+}
+
+.container-fluid h1 {
+    font-size: 30px;
+}
+
+.dropbtn {
+background-color: #4CAF50;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+margin-right: 5%;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.header {
+    height: 40px;
+    display: flex;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    margin-left: 4%;
+}
+.header h1 {
+    font-size: 48px;
+    font-family: Brush Script MT;
+    margin-left: 1%;
+    margin-bottom: 2%;
+}

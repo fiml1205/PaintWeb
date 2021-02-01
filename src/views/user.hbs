@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            background-image: url(https://thuthuatnhanh.com/wp-content/uploads/2019/12/hinh-nen-may-tinh.jpg);
+        }
+        .design {
+            width: 1000px;
+            background-color: aliceblue;
+            height: 600px;
+            margin: auto;
+            overflow-y: auto; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar{
+            width: 10px;
+            background:white;
+            border-radius: 10px;   
+        }
+        ::-webkit-scrollbar-thumb{
+            background: gray;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            background: greenyellow;
+        }
+        .d-flex {
+            margin: auto;
+            margin-left: 25%;
+        }
+
+        .container-fluid h1 {
+            font-size: 30px;
+        }
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-right: 5%;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+        .header {
+            height: 40px;
+            display: flex;
+            margin-top: 0.5%;
+            margin-bottom: 1%;
+            margin-left: 4%;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-family: Brush Script MT;
+            margin-left: 1%;
+            margin-bottom: 2%;
+        }
+        .add {
+            margin-top: 3%;
+            margin-left: 17.5%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Paint Is Life</h1>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="dropdown">
+            <button class="dropbtn fas fa-user" ></button>
+            <div class="dropdown-content">
+                <a href="#">Ảnh đã lưu</a>
+                <a href="#">Vẽ lại ảnh cuối</a>
+                <a href="http://localhost:3000/getchangepw">Đổi mật khẩu</a>
+                <a href="/logout">Đăng xuất</a>
+            </div>
+        </div>
+    </div>
+    <h3 class="add"><a href="http://localhost:3000/admincreate" class="btn btn-primary">ADD USER</a></h3>
+    <div class="design">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>                    
+                <th scope="col">Name</th>                    
+                <th scope="col">Password</th>              
+                <th scope="col">Action</th>              
+                </tr>            
+            </thead>
+            <tbody>
+                {{#each users}}           
+                <tr>
+                <th scope="row">{{sum @index 1}}</th>            
+                <td>{{this.name}}</td>            
+                <td>{{this.password}}</td> 
+                <td>
+                    <a href="/userctrl/{{this._id}}/edit" class="btn btn-primary btn-sm">Edit</a>                 
+                     {{!-- <a href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">Delete</a>   --}}
+                    <a href="/userctrl/{{this._id}}/delete" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">Delete</a>  
+                </td>           
+                </tr> 
+                {{/each}}      
+            </tbody>             
+        </table>                                                                                 
+    </div>
+
+    <!-- Modal -->
+    {{!-- <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Delete Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">Do You Sure To Delete This Account?</div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger"><a href="/userctrl/{{this._id}}/delete"></a> Delete</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>                 --}}
+</body>
+</html>

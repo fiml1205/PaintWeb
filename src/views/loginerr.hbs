@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <style type="text/css">
+        body {    
+            background-image: url(https://thuthuatnhanh.com/wp-content/uploads/2019/12/hinh-nen-may-tinh.jpg);
+        }               
+        form {
+            width:700px;
+            height: 520px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.59);
+            border-radius: 5px;
+            margin-top: 10%; 
+            margin-right:10%;
+            margin-left: 28%;
+            background-color: beige;
+            padding: 0 40px;
+        }
+        h1 {
+            margin-top: 5%;
+            font-weight: bold;
+            font-size: 40px;
+            text-align: center; 
+            user-select: none;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+        label {  
+            font-size: 20px;
+            color: #515A5A;
+        }        
+        input {
+            border: none;
+             outline: none;
+            padding: 13px;
+            transition: all 0.4s ease-out;
+            border-radius: 10px;
+        }
+        input:focus, input:valid {
+                    border-bottom: 2px solid #28B463;
+        }
+        button {
+            outline: none;
+            border: none;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #2ECC71;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.4s ease-out;
+        }
+        button:hover {
+                background-color: #28B463;
+        }
+        .dk {
+            margin: auto;
+            margin-bottom: 2%;
+            font-size: 20px;
+        }
+        .err {
+            margin: auto;
+            color: red;
+            font-size: 20px;
+        }
+        .dk {
+            font-size: 20px;
+            margin-left: 20%;
+            margin-bottom: 10px;
+            
+        }
+        .fas {
+            margin-left: 31%;
+            font-size: 25px;
+            
+        }
+        .more{
+            margin-bottom: 20px;
+        }
+        .space {
+            margin-top: 1%;
+        }
+    </style>
+</head>
+<body>
+        <form method="POST" action="">
+            <h1>Đăng Nhập</h1>
+            <div class="form">
+                <label for="login_username" class="space">Tài Khoản</label>
+                <input 
+                    type="text"
+                    name="name"   
+                >
+            </div>
+            <div class="form">
+                <label for="login_password">Mật Khẩu</label>
+                <input 
+                    type="password"
+                    name="password"  
+                >
+            </div>
+            <p class="err">Sai tên đăng nhập hoặc mật khẩu</p>
+            <button type="submit" >Đăng Nhập</button>
+            <div class="more">
+                <a href="http://localhost:3000/paint" class="fas fa-palette btn btn-danger" ></a>
+                <a href="http://localhost:3000/create" class="dk btn btn-danger">Đăng kí</a>
+            </div>
+        </form>
+</body>
+</html>
